@@ -1,0 +1,30 @@
+<html>
+    <head>New</head>
+    <body>
+        <form action="newShow" method="POST">
+            <label for="name">Show name</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <!-- <label for="genre">Genre</label> -->
+            Genre:
+            <br>
+            <% genres.forEach(genre => { %>
+                <label for=<%=genre.id%>><%=genre.genre_name%></label>
+                <input type="checkbox" id=<%=genre.id%> name="genre_ids" value=<%=genre.id%>>  
+                <br>  
+            <% }) %>
+            <br>
+            <label for="channel">Channel</label>
+            <select name="channel" id="channel">
+                <% channels.forEach((channel,i) => { %>
+                    <option value=<%=i+1%>><%=channel%></option>    
+                <% }) %>
+            </select>
+            <br>
+            <button>Submit new show</button>
+        </form>
+        <!-- <form action="" method="POST">
+            <label for=""></label>
+        </form> -->
+    </body>
+</html>

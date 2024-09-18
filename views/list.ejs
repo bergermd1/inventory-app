@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Inventory List</h1>
+        <ul>
+            <% results.map(result => { %>
+                <li>
+                    <ul>
+                        <li>
+                            Name: <%= result.show_name %>
+                        </li>
+                        <li>
+                            Genre:
+                            <ul>
+                                <% genres[result.id].forEach(genre => {%>
+                                    <li><%= genre.genre_name %></li>
+                                <%})%>
+                            </ul>
+                            <%= result.genre_name %>
+                        </li>
+                        <li>
+                            Channel: <%= result.channel_name %>
+                        </li>
+                    </ul>
+                </li>
+            <% }) %>
+        </ul>
+    </body>
+</html>
